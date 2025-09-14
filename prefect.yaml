@@ -2,19 +2,10 @@
 name: prefect-test-pipeline
 prefect-version: 2.14.0
 
-# Build configuration
-build:
-  - prefect.deployments.steps.set_working_directory:
-      directory: /Users/kushagraagarwal/Documents/zryth/prefect-test-pipeline
-  - prefect.deployments.steps.pip_install_requirements:
-      requirements_file: requirements.txt
-
 # Deployments
 deployments:
   - name: sequential-workflow
     entrypoint: workflow.py:sequential_workflow
-    work_pool:
-      name: default-agent-pool
     tags:
       - demo
       - sequential
