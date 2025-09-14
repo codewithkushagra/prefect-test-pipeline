@@ -13,9 +13,7 @@ if __name__ == "__main__":
     
     # Check if running in CI/CD environment
     if os.getenv("GITHUB_ACTIONS"):
-        # In CI/CD, just create the deployment without serving
         deployment.apply()
         print("Deployment created successfully!")
     else:
-        # In local development, serve the deployment
         serve(deployment)
