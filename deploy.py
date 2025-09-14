@@ -3,12 +3,13 @@ from workflow import sequential_workflow
 import os
 
 if __name__ == "__main__":
-    # Create the deployment without work pool for free tier
+    # Create the deployment with the test work pool
     deployment = sequential_workflow.to_deployment(
         name="sequential-workflow-deployment",
         description="A deployment of the sequential workflow with 3 tasks",
         tags=["demo", "sequential", "basic"],
-        version="1.0.0"
+        version="1.0.0",
+        work_pool_name="test"
     )
     
     # Check if running in CI/CD environment

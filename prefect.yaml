@@ -6,6 +6,8 @@ prefect-version: 2.14.0
 deployments:
   - name: sequential-workflow
     entrypoint: workflow.py:sequential_workflow
+    work_pool:
+      name: test
     tags:
       - demo
       - sequential
